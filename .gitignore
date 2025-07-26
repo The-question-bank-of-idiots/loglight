@@ -39,3 +39,7 @@
 
 # debug information files
 *.dwo
+.vscode/ 
+.idea/
+*.exe
+output/
