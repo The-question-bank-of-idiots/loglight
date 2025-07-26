@@ -1,6 +1,6 @@
 # 设置最低版本要求
-cmake_minimum_required(VERSION 3.30)
-project(loglight LANGUAGES CXX VERSION 1.0.0)
+cmake_minimum_required(VERSION 3.18)
+project(loglight_pro LANGUAGES CXX VERSION 1.0.0)
 
 add_subdirectory(src)
 
