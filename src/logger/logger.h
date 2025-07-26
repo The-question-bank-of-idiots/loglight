@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <fmt/core.h>
 
 namespace loglight {
 
@@ -15,16 +16,19 @@ public:
     virtual ~Logger() = default;
 
     // 基础日志记录方法
-    inline void info(const std::string& message) {
-        log(LogLevel::INFO, message);
+    template<typename... Args>
+    inline void info(const std::string& fmt, Args&&... args) {
+        log(LogLevel::INFO, fmt::format(fmt, std::forward<Args>(args)...));
     }
 
-    inline void warning(const std::string& message) {
-        log(LogLevel::WARNING, message);
+    template<typename... Args>
+    inline void warning(const std::string& fmt, Args&&... args) {
+        log(LogLevel::WARNING, fmt::format(fmt, std::forward<Args>(args)...));
     }
 
-    inline void error(const std::string& message) {
-        log(LogLevel::ERROR, message);
+    template<typename... Args>
+    inline void error(const std::string& fmt, Args&&... args) {
+        log(LogLevel::ERROR, fmt::format(fmt, std::forward<Args>(args)...));
     }
 
 protected:

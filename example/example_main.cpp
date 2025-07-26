@@ -14,5 +14,9 @@ int main() {
     consoleLogger->warning("This is a warning message");
     consoleLogger->error("This is an error message");
 
+    consoleLogger->info("This is a info message with arguments: {}", 1);
+    consoleLogger->warning("This is a warning message with arguments: {}, {}", 1, 2);
+    consoleLogger->error("This is an error message with arguments: {}, {}, {}", 1, 2, std::string("hello"));
+
     return 0;
 }
