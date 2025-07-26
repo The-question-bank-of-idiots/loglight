@@ -2,6 +2,9 @@
 
 set -e
 
+git submodule init
+git submodule update
+
 echo "Creating build directory..."
 if [ -d "build" ]; then
     rm -rf build
