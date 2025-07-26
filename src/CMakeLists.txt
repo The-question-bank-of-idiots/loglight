@@ -1,5 +1,8 @@
 project(loglight)
 
+# 包含fmt库
+include_directories(${CMAKE_SOURCE_DIR}/third_party/fmt/include)
+
 # 设置源文件列表
 set(src_list
     queue/queue.cpp
@@ -9,6 +12,9 @@ set(src_list
 
 # 创建共享库
 add_library(${PROJECT_NAME} SHARED ${src_list})
+add_library(loglight::loglight ALIAS loglight)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt)
 
 # 设置C++20标准
 set_target_properties(${PROJECT_NAME} PROPERTIES
