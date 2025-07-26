@@ -3,6 +3,8 @@ project(loglight)
 # 设置源文件列表
 set(src_list
     queue/queue.cpp
+    logger/console_logger.cpp
+    logger_factory/logger_factory.cpp
 )
 
 # 创建共享库

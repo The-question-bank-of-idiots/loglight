@@ -15,3 +15,8 @@ make -j128
 popd >> /dev/null
 
 echo -e "\033[32mBuild completed successfully\033[0m"
+
+echo "Running example..."
+pushd build >> /dev/null
+./example/loglight_example
+popd >> /dev/null
