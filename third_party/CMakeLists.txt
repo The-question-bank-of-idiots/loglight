@@ -9,3 +9,7 @@ FetchContent_Declare(
   GIT_TAG 11.2.0
 )
 FetchContent_MakeAvailable(fmt)
+
+if(NOT TARGET fmt::fmt)
+    message(FATAL_ERROR "fmt library not available")
+endif()
