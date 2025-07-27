@@ -52,18 +52,18 @@ public:
 
     // set log level
     void setLogLevel(LogLevel level) {
-        m_logLeavel = level;
+        m_logLevel = level;
     }
 
     // get log level
     LogLevel getLogLevel() const {
-        return m_logLeavel;
+        return m_logLevel;
     }
 
 protected:
     virtual void log(LogLevel level, const std::string& message) = 0;
 
-    LogLevel m_logLeavel = LogLevel::INFO;
+    LogLevel m_logLevel = LogLevel::INFO;
 };
 
 } // namespace loglight
