@@ -43,3 +43,7 @@
 /build
 /.idea
 /.vscode
+
+# maijiko
+/libs
+/bin
