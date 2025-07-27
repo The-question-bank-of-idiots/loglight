@@ -14,6 +14,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/libs)
 add_library(${PROJECT_NAME} SHARED ${src_list})
 add_library(loglight::loglight ALIAS loglight)
 
+# 链接依赖项
 target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt)
 
 # 设置C++20标准
@@ -25,7 +26,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/third_party/fmt/include>
     $<INSTALL_INTERFACE:include/loglight>
 )
 
