@@ -1,0 +1,13 @@
+@PACKAGE_INIT@
+
+# 查找fmt库
+find_package(fmt QUIET)
+
+if(NOT fmt_FOUND)
+    # 可以设置一些提示信息或默认路径
+    message(STATUS "Using bundled fmt library")
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/loglightTargets.cmake")
+
+check_required_components(loglight)

@@ -17,18 +17,18 @@ public:
 
     // 基础日志记录方法
     template<typename... Args>
-    inline void info(const std::string& fmt, Args&&... args) {
-        log(LogLevel::INFO, fmt::format(fmt, std::forward<Args>(args)...));
+    inline void info(fmt::format_string<Args...> format, Args&&... args) {
+        log(LogLevel::INFO, fmt::format(format, std::forward<Args>(args)...));
     }
 
     template<typename... Args>
-    inline void warning(const std::string& fmt, Args&&... args) {
-        log(LogLevel::WARNING, fmt::format(fmt, std::forward<Args>(args)...));
+    inline void warning(fmt::format_string<Args...> format, Args&&... args) {
+        log(LogLevel::WARNING, fmt::format(format, std::forward<Args>(args)...));
     }
 
     template<typename... Args>
-    inline void error(const std::string& fmt, Args&&... args) {
-        log(LogLevel::ERROR, fmt::format(fmt, std::forward<Args>(args)...));
+    inline void error(fmt::format_string<Args...> format, Args&&... args) {
+        log(LogLevel::ERROR, fmt::format(format, std::forward<Args>(args)...));
     }
 
 protected:
